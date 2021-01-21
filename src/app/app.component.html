@@ -4,7 +4,7 @@
     <h3 *ngIf="todos.length == 0"><small>Nenhuma tarefa listada!</small></h3>
     <li *ngFor="let todo of todos">
         {{ todo.id}}. {{ todo.titulo }} | 
-        <button *ngIf="!todo.done" (click)="markAsDone(todo)">ADICIONAR</button> | 
+        <button *ngIf="!todo.done" (click)="markAsDone(todo)">CONCLUIR</button> | 
         <button *ngIf="todo.done" (click)="markAsUndone(todo)">REFAZER</button> |
         <button (click)="remove(todo)">REMOVER</button>
     </li>
