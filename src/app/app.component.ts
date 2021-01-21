@@ -21,10 +21,18 @@ export class AppComponent {
         Validators.required,
       ])]
     });
-    this.todos.push(new Todo(1, 'Ir ao supermecado', false));
-    this.todos.push(new Todo(2, 'Abastecer o carro', false));
-    this.todos.push(new Todo(3, 'Arrumar as malas', true)); 
   } 
+
+  add(){
+    const title = this.form.controls['title'].value;
+    const id = this.todos.length + 1;
+    this.todos.push(new Todo(id, title, false));
+    this.clear();
+  }
+
+  clear(){
+    this.form.reset();
+  }
 
   remove(todo: Todo){
     const index = this.todos.indexOf(todo);
